@@ -1,6 +1,6 @@
 # ReExtractor
-## 软件介绍
-ReExtractor是bit-se实验室独立开发的一款软件重构检测工具，可以基于本地Git仓库内的提交历史进行重构行为的检测。
+## Introduction
+ReExtractor is an independently developed software refactoring detection tool by the bit-se lab, capable of detecting refactoring behaviors based on commit histories in local Git repositories.
 
 ![image](https://github.com/user-attachments/assets/f00f0011-b4b9-4611-96ff-d9ffc0036f74)
 
@@ -11,39 +11,39 @@ ReExtractor是bit-se实验室独立开发的一款软件重构检测工具，可
 ![image](https://github.com/user-attachments/assets/2b37b5e2-4a84-4ccf-815d-971dc74c037d)
 
 
-## 如何使用 ReExtractor ?
-**1.选择要进行重构检测的Git仓库。（注：仓库必须预先克隆到本地）**
+## How to Use ReExtractor?
+**1. Select the Git repository for refactoring detection. (Note: The repository must be cloned locally in advance.)**
 
 ![image](https://github.com/user-attachments/assets/95936fa6-5b04-4b83-bfe0-7d84ab084375)
 
 
-**2.选择重构检测方式，ReExtractor当前支持5种检测方式。**
+**2. Choose the refactoring detection method. ReExtractor currently supports 5 detection modes.**
 
 ![image](https://github.com/user-attachments/assets/e56bfa9a-48ef-4dbe-91db-e6bff95efd7f)
 
 
-以下图提交历史为例，说明5种检测方式的区别。
+Using the following commit history as an example, the differences between the 5 detection modes are explained:
 
 ![image](https://github.com/user-attachments/assets/c39066c9-e1f1-46f2-a0d7-0276b12843af)
 
-(1)**Specific Commit**:特定提交的重构检测，若选择提交C2，则检测C1到C2间的重构操作。
+(1)**Specific Commit**: Detects refactoring operations in a specific commit. If commit C2 is selected, it analyzes changes between C1 and C2.
 
-(2)**Commit-to-Commit**：两个提交间的重构检测，若选择提交C1和C3，则检测C1到C3之间的重构操作。
+(2)**Commit-to-Commit**：Detects refactoring between two selected commits. If C1 and C3 are chosen, it analyzes all refactoring operations from C1 to C3.
 
-(3)**Commit Range**：两个提交间的所有连续提交的重构检测，若选择提交C1和C3，则检测C1到C2和C2到C3之间的重构操作。
+(3)**Commit Range**：Detects refactoring across all consecutive commits between two selected commits. If C1 and C3 are chosen, it separately analyzes C1→C2 and C2→C3.
 
-(4)**Tag-to-Tag**：类比Commit-to-Commit，是release跨度级别的检测。
+(4)**Tag-to-Tag**：Similar to Commit-to-Commit, but operates at the release level (tag-to-tag comparison).
 
-(5)**Tag Range**：类比Commit Range，是release跨度级别的检测。
+(5)**Tag Range**：Similar to Commit Range, but operates at the release level (analyzing consecutive tags).
 
 
-**3.选择检测方式和commit后，软件会显示提交信息和diff**
+**3.After selecting the detection mode and commits, the software will display commit messages and diffs.**
 ![image](https://github.com/user-attachments/assets/76c98fcb-859b-4875-b5f5-d6c1e78cc1bf)
 
-**4.点击“Detect”按钮，出现重构总结列表，可以通过文件树和饼图来查看感兴趣文件和感兴趣类型的重构。**
+**4.Click the "Detect" button to generate a refactoring summary list. You can explore files of interest and refactoring types using the file tree and pie chart.**
 ![image](https://github.com/user-attachments/assets/9e986c92-4ef5-4da6-9756-f2487d64c928)
 
-**4.点击“Location”按钮，在代码中定位重构**
+**5.Click the "Location" button to navigate to the refactored code in the source files.**
 ![image](https://github.com/user-attachments/assets/4f176f69-c08e-40a6-bb18-38e3f3775e67)
 
 ![image](https://github.com/user-attachments/assets/eebe5308-396a-4165-9d72-ec497721cd29)
